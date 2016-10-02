@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 
+//import { DatabindingComponent } from './databinding';
+import { LifecycleComponent } from './lifecycle.component';
+
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <h1>Spme text</h1>
+    <app-lifecycle></app-lifecycle>
+  `
 })
 export class AppComponent {
   title = 'app worksc!';
