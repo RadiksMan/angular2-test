@@ -2,4 +2,35 @@
 <h2>ngClass / ngStyle</h2>
 <div [ngClass]="{border:true, background: true}" ></div><div [class.background]="true" [ngStyle]="{'border':'3px solid green'}"></div>
 <hr>
-<h2 highlight >Custom Attribute Directives</h2>
+<h2 [highlight]="'pink'" [defaultColor]="'red'">Custom Attribute Directives</h2>
+<hr>
+<h1>Structual Directives</h1>
+<br>
+
+<h2>*ngIf</h2>
+<div *ngIf="switch">Conditional TEXT</div>
+<template [ngIf]="switch">
+    <div>
+        Conditional Text
+    </div>
+</template>
+<button (click)="onSwitch()"> SWITCH</button>
+<br><br><br>
+
+
+<h2>*ngFor</h2>
+<ul>
+    <li *ngFor="let item of items; let i = index ">{{item}}  (index of element = {{i}})</li>
+</ul>
+
+<br><br><br><br>
+<h2>ngSwitch</h2>
+<div [ngSwitch]="value">
+    <p *ngSwitchCase="10" > 10 </p>
+    <p *ngSwitchCase="100" > 100 </p>
+    <p *ngSwitchDefault> Default </p>
+</div>
+
+<br><br><br>
+<h2>UnlessDirective</h2>
+<div *unless="switch">Conditional Text</div>
