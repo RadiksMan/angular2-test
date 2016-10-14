@@ -7,13 +7,13 @@ export class HighlightDirective {
 
 
     @HostListener('mouseenter') mouseenter(){
-        this.backgroundColor = this.highlightColor;
+        this.background = this.highlightColor;
     };
     @HostListener('mouseleave') mouseleave(){
-        this.backgroundColor = this.defaultColor;
+        this.background = this.defaultColor;
     };
     @HostBinding('style.backgroundColor') get setColor(){
-        return this.backgroundColor;
+        return this.background;
     };
 
     @HostListener('click', ['$event']) onClick(event){
@@ -25,7 +25,7 @@ export class HighlightDirective {
     @Input('defaultColor') defaultColor = 'white';
     @Input('highlight') highlightColor = 'green';
 
-    private backgroundColor:string;
+    private background:string;
 
 
     constructor(private elementRef: ElementRef, private renderer: Renderer) {
@@ -34,7 +34,7 @@ export class HighlightDirective {
     }
 
     ngOnInit(){
-        this.backgroundColor = this.defaultColor;
+        this.background = this.defaultColor;
     }
 
 }

@@ -7,14 +7,16 @@ export class UnlessDirective {
 
     @Input() set unless(condition:boolean) {
         if (!condition){
-            this.vcRef.createEmbeddedView(this.templateRef);
+            this.vcRef.createEmbeddedView(this.templateRefSugar);
         }else{
             this.vcRef.clear();
         }
     }
 
-  constructor(private templateRef:TemplateRef<any>, private vcRef:ViewContainerRef) {
+  constructor(private templateRefSugar:TemplateRef<any>, private vcRef:ViewContainerRef) {
 
   }
+
+  //templateRefSugar - синтаксический сахар
 
 }
