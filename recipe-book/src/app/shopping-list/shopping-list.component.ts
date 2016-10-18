@@ -5,6 +5,7 @@ import {ShoppingListService} from './shopping-list.service';
   selector: 'rb-shopping-list',
   templateUrl: './shopping-list.component.html'
 })
+
 export class ShoppingListComponent implements OnInit {
     items: Ingredient[] = [];
 

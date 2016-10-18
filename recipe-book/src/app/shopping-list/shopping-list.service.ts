@@ -9,9 +9,9 @@ export class ShoppingListService {
     }
 
     addItems(itemsArr: Ingredient[]){
-        //Array.prototype.push.apply(this.items, itemsArr)      <--- old style
-        for( let item of itemsArr){
-            this.items.push(item);
-        }
+        Array.prototype.push.apply(this.items, itemsArr)      /*<--- old style*/
+        // for( let item of itemsArr){
+        //     this.items.push(item);
+        // }
     }
 }
