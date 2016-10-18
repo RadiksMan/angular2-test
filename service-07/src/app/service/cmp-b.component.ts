@@ -19,12 +19,12 @@ import {DataService} from './data.service';
           <li *ngFor="let item of items">{{item}}</li>
       </ul>
       <h3>Received Value</h3>
-      <p>{{value}}</p>
+      <p>{{outputValue}}</p>
   </div>
 `
 })
-export class CmpBComponent {
-    value = '';
+export class CmpBComponent implements OnInit{
+    outputValue = '';
     constructor(private logService: LogService, private dataService:DataService){}
 
     items: string[] = [];
@@ -43,5 +43,10 @@ export class CmpBComponent {
 
     onSend(value: string) {
 
+    }
+    ngOnInit(){
+      this.dataService.pushedData.subscribe(
+          data => this.outputValue = data
+      );
     }
 }

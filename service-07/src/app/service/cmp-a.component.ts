@@ -20,13 +20,13 @@ import {DataService} from './data.service';
             <li *ngFor="let item of items">{{item}}</li>
         </ul>
         <h3>Received Value</h3>
-        <p>{{value}}</p>
+        <p>{{outputValue}}</p>
     </div>
   `
 })
 export class CmpAComponent {
 
-    value = '';
+    outputValue = '';
     constructor(private logService: LogService, private dataService:DataService){}
 
     items: string[] = [];
@@ -44,7 +44,7 @@ export class CmpAComponent {
     }
 
     onSend(value: string) {
-
+      this.dataService.pushData(value);
     }
 
 }
