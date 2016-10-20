@@ -11,7 +11,10 @@ export class RecipeService {
             new Ingredient ('French Fries', 2),
             new Ingredient ('Pork Meat', 1)
         ]),
-        new Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])
+        new Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [
+            new Ingredient ('French Fries2', 2),
+            new Ingredient ('Pork Meat2', 1)
+        ])
     ];
 
     constructor() { }

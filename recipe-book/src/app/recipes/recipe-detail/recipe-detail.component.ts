@@ -1,7 +1,9 @@
 import { Component, OnInit , Input} from '@angular/core';
 
 import {Recipe} from "../recipe";
-// import {Ingredient} from "../../shared";
+
+import {Ingredient} from "../../shared";
+
 import {ShoppingListService} from "../../shopping-list/shopping-list.service";
 
 
