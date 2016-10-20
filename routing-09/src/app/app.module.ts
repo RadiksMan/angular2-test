@@ -6,8 +6,8 @@ import { HomeComponent } from './home-component.component';
 import { UserComponent } from './user/user.component';
 import { UserEditComponent } from './user/user-edit.component';
 import { UserDetailComponent } from './user/user-detail.component';
-
-
+import { UserDetailGuard } from './user/user-detail.guard';
+import {UserEditGuard} from './user/user-edit.guard';
 
 import { routing } from './app.routing';
 
@@ -23,7 +23,7 @@ import { routing } from './app.routing';
     BrowserModule,
     routing
   ],
-  providers: [],
+  providers: [UserDetailGuard, UserEditGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
