@@ -1,11 +1,21 @@
-import {provideRoutes} from "@angular/router";
-import {RecipesComponent} from "./recipes/recipes.component";
-import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-export const APP_ROUTES_PROVIDER = [
-  provideRoutes([
-    {path:'', redirectTo:'/recipes', pathMatch: 'full'},
-    {path:'recipes', component: RecipesComponent},
-    {path:'shopping-list', component: ShoppingListComponent}
-  ])
+import { RecipesComponent } from './recipes/recipes.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+
+import {RECIPE_ROUTES} from "./recipes/recipes.routes";
+
+
+const routes: Routes = [
+  { path: '', redirectTo: '/recipes', pathMatch:'full' },
+  { path: 'recipes', component: RecipesComponent, children: RECIPE_ROUTES },
+  { path: 'shopping-list', component: ShoppingListComponent }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: []
+})
+export class RecipeBookRoutingModule { }
