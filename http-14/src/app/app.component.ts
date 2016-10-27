@@ -9,11 +9,33 @@ import {HttpService} from './http.service';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
+
+    items: any[] = [];
+    asnyString = this.httpService.getData();
+
     constructor(private httpService:HttpService){}
 
     ngOnInit(){
         this.httpService.getData().subscribe(
             (data) => console.log(data)
+        )
+    }
+
+    onSubmit(username,email){
+        this.httpService.sendData( {username: username, email: email} ).subscribe(
+            data => console.log(data)
+            error => console.log(error)
+        )
+    }
+    onGetData(){
+        this.httpService.getOwnData().subscribe(
+            data => {
+                var myArray = [];
+                for (let key in data){
+                    myArray.push(data[key])
+                }
+                this.items = myArray;
+            }
         )
     }
 }
