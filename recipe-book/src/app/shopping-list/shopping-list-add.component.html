@@ -8,7 +8,7 @@
                  id="item-name"
                  required
                  class="form-control"
-                 ngModel
+                 [ngModel]="itemWhoSelected.name"
                  name="name"
           >
         </div>
@@ -20,7 +20,7 @@
                  required
                  class="form-control"
                  name="amount"
-                 ngModel
+                 [ngModel]="itemWhoSelected.amount"
           >
         </div>
       </div>
@@ -28,8 +28,8 @@
         <div class="col-xs-12">
           <button class="btn btn-success" type="submit" *ngIf="isAdd"  [disabled]="!f.valid" >Add</button>
           <button class="btn btn-success" type="submit" *ngIf="!isAdd" [disabled]="!f.valid" >Save Item</button>
-          <button class="btn btn-danger" type="button" *ngIf="!isAdd" [disabled]="!f.valid" >Delete Item</button>
-          <button class="btn btn-primary" type="button" *ngIf="!isAdd" [disabled]="!f.valid" >Clear</button>
+          <button class="btn btn-danger" type="button" *ngIf="!isAdd" [disabled]="!f.valid" (click)="onDelete()">Delete Item</button>
+          <button class="btn btn-primary" type="button" *ngIf="!isAdd" [disabled]="!f.valid" (click)="onClear()">Clear</button>
         </div>
       </div>
     </form>

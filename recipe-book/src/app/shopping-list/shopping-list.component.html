@@ -1,9 +1,13 @@
 <div class="row">
     <div class="col-xs-10">
-        <rb-shopping-list-add [item]="selectedItem" ></rb-shopping-list-add>
+        <rb-shopping-list-add [itemWhoSelected]="selectedItem" (cleared)="onClearedChoosen()"></rb-shopping-list-add>
         <hr>
         <ul class="list-gropu">
-            <a class="list-group-item" style="" *ngFor="let item of items" (click)="onSelectItem(item)" )>{{item.name}}  ({{item.amount}})</a>
+            <a class="list-group-item"
+               *ngFor="let item of items"
+               (click)="onSelectItem(item)" >
+                {{item.name}}  ({{item.amount}})
+            </a>
         </ul>
     </div>
 </div>
